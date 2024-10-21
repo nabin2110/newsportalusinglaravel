@@ -151,7 +151,8 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('assets/backend/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{ asset('assets/backend/js/demo/chart-pie-demo.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js" integrity="sha512-KFHXdr2oObHKI9w4Hv1XPKc898mE4kgYx58oqsc/JqqdLMDI4YjOLzom+EMlW8HFUd0QfjfAvxSL6sEq/a42fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    @yield('js')
+    <script src="{{ asset('assets/backend/js/jquery_validate.min.js') }}"></script>
+    @yield('js')
 </body>
 
 </html>
