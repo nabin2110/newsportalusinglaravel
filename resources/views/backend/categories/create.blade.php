@@ -7,7 +7,7 @@
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
             <div class="text-right m-3">
-                <a href="" class="btn btn-info">All {{ $panel }}</a>
+                <a href="{{ route($base_route.'index') }}" class="btn btn-info">All {{ $panel }}</a>
             </div>
             <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
                 role="button" aria-expanded="true" aria-controls="collapseCardExample">

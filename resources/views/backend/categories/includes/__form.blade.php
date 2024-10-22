@@ -6,4 +6,5 @@
         {!! Html::label('Enter category name*','name') !!}
         {!! Html::text('name',$record ?? old('name'))->placeholder('Enter category name*')->class('form-control') !!}
     </div>
+    @include('backend.includes.field_validation',['input'=>'name'])
 </div>

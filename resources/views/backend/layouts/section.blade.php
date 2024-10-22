@@ -20,6 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/backend/css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/backend/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/themes/base/jquery-ui.min.css" integrity="sha512-F8mgNaoH6SSws+tuDTveIu+hx6JkVcuLqTQ/S/KJaHJjGc8eUxIrBawMnasq2FDlfo7FYsD8buQXVwD+0upbcA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @yield('css')
 
 </head>
@@ -147,11 +148,13 @@
 
     <!-- Page level plugins -->
     <script src="{{ asset('assets/backend/vendor/chart.js/Chart.min.js')}}"></script>
-
+    <script src="{{ asset('assets/backend/js/script.js') }}"></script>
     <!-- Page level custom scripts -->
     <script src="{{ asset('assets/backend/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{ asset('assets/backend/js/demo/chart-pie-demo.js')}}"></script>
     <script src="{{ asset('assets/backend/js/jquery_validate.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js" integrity="sha512-MlEyuwT6VkRXExjj8CdBKNgd+e2H+aYZOCUaCrt9KRk6MlZDOs91V1yK22rwm8aCIsb5Ec1euL8f0g58RKT/Pg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.3/Sortable.min.js" integrity="sha512-8AwTn2Tax8NWI+SqsYAXiKT8jO11WUBzTEWRoilYgr5GWnF4fNqBRD+hCr4JRSA1eZ/qwbI+FPsM3X/PQeHgpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @yield('js')
 </body>
 

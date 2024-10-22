@@ -23,6 +23,7 @@ Route::get('/dashboard', [HomeController::class,'index'])->middleware(['auth', '
 
 Route::middleware('auth')->group(function () {
     Route::prefix('/backend/')->group(function(){
+            Route::get('category/sort',[CategoryController::class,'sort'])->name('backend.categories.sort');
             Route::resource('category',CategoryController::class)->names('backend.categories');
     });
 });

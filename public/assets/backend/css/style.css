@@ -2,3 +2,37 @@
     color: #e31717;
     font-size: 0.8rem;
 }
+/* Container styling */
+.filter-container {
+    position: relative; /* Ensure the filter form is positioned relative to this container */
+    display: inline-block; /* Allow the container to adjust to the size of its contents */
+}
+
+/* Filter Form (Initially Hidden) */
+.filter-form {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it relative to the container */
+    top: 100%; /* Position it directly below the button */
+    right: 0; /* Align it to the right of the container */
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 15px; /* Padding around the form */
+    border: 1px solid #ddd; /* Border for visibility */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: 300px; /* Set a fixed width for the dropdown */
+}
+
+/* Show the filter form when it has the 'open' class */
+.filter-form.open {
+    display: block; /* Show when open */
+}
+
+/* Optional: Customize form appearance */
+.filter-form .form-group {
+    margin-bottom: 15px; /* Spacing between form groups */
+}
+
+/* Adjust button margin if needed */
+#filterToggle {
+    margin-bottom: 0; /* Ensure there is no extra space below the button */
+}
