@@ -4,21 +4,21 @@ namespace App\Http\Controllers\backend;
 
 use App\Helpers\CustomHelpers;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\backend\CategoryRequest;
-use App\Models\Category;
+use App\Http\Requests\backend\TagRequest;
+use App\Models\Tag;
 use Exception;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class CategoryController extends BackendBaseController
+class TagController extends BackendBaseController
 {
-    protected $base_route = 'backend.categories.';
-    protected $base_view = 'backend.categories.';
-    protected $panel = 'Category';
+    protected $base_route = 'backend.tags.';
+    protected $base_view = 'backend.tags.';
+    protected $panel = 'Tag';
 
     protected $model;
     public function __construct(){
-        $this->model = new Category();
+        $this->model = new Tag();
     }
     public function create(){
         return view($this->__loadDataToView($this->base_view.'create'));
@@ -30,11 +30,11 @@ class CategoryController extends BackendBaseController
                             ->when($search,function($query,$search){
                                 $query->where('name','like','%'.$search.'%');
                             })
-                            ->orderBy('rank')
+                            ->orderBy('created_at','desc')
                             ->paginate($paginate);
         return view($this->__loadDataToView($this->base_view.'index'),compact('data'));
     }
-    public function store(CategoryRequest $request){
+    public function store(TagRequest $request){
         try{
             $status = CustomHelpers::saveCategory($this->model,$request->name ?? null);
             $success_type = $status ? 'success' : 'error';
@@ -46,21 +46,11 @@ class CategoryController extends BackendBaseController
             return redirect()->back();
         }
     }
-    public function sort(Request $request){
-        $ids = $request->ids;
-        $explode_ids = explode(',',$ids);
-        print_r($explode_ids);
-        foreach($explode_ids as $key=>$id){
-            $record = $this->model->findOrFail($id);
-            $record->rank = $key;
-            $record->save();
-        }
-    }
     public function edit($id){
         $data['record'] = $this->model->findOrFail($id);
         return view($this->__loadDataToView($this->base_view.'edit'),compact('data'));
     }
-    public function update(CategoryRequest $request,$id){
+    public function update(TagRequest $request,$id){
         $data['record'] = $this->model->findOrFail($id);
         try{
             $data_updated = $data['record']->update($request->all());

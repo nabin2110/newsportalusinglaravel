@@ -21,9 +21,14 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
+            <a class="nav-link" href="@include('backend.includes.routeRedirection',['routeName'=>'backend.categories.index'])">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
+                <span>Categories</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@include('backend.includes.routeRedirection',['routeName'=>'backend.tags.index'])">
+                <i class="fas fa-fw fa-tags"></i>
+                <span>Tags</span></a>
         </li>
 
 

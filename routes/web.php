@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\HomeController;
 use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\TagController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,12 @@ Route::get('/dashboard', [HomeController::class,'index'])->middleware(['auth', '
 
 Route::middleware('auth')->group(function () {
     Route::prefix('/backend/')->group(function(){
-            Route::resource('category',CategoryController::class)->names('backend.categories');
+        // category route from here
+            Route::get('category/sort',[CategoryController::class,'sort'])->name('backend.categories.sort');
+            Route::resource('category',CategoryController::class)->names('backend.categories');#
+
+            //tag route from here
+            Route::resource('tag',TagController::class)->names('backend.tags');
     });
 });
 

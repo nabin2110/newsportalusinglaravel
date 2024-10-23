@@ -20,6 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/backend/css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/backend/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/backend/css/jquery-ui.min.css') }}">
     @yield('css')
 
 </head>
@@ -147,11 +148,15 @@
 
     <!-- Page level plugins -->
     <script src="{{ asset('assets/backend/vendor/chart.js/Chart.min.js')}}"></script>
-
+    <script src="{{ asset('assets/backend/js/script.js') }}"></script>
     <!-- Page level custom scripts -->
     <script src="{{ asset('assets/backend/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{ asset('assets/backend/js/demo/chart-pie-demo.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js" integrity="sha512-KFHXdr2oObHKI9w4Hv1XPKc898mE4kgYx58oqsc/JqqdLMDI4YjOLzom+EMlW8HFUd0QfjfAvxSL6sEq/a42fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    @yield('js')
+    <script src="{{ asset('assets/backend/js/jquery_validate.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/sortable.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/sweet_alert.min.js') }}"></script>
+    @yield('js')
 </body>
 
 </html>
