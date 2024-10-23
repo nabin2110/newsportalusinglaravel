@@ -13,7 +13,9 @@ class Category extends Model
         'name',
         'rank'
     ];
-
+    public function posts(){
+       return  $this->hasMany(Post::class,'category_id','id');
+    }
     public static function boot(){
         parent::boot();
         

@@ -47,15 +47,15 @@
                    <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Sort</th>
+                            <th>SN</th>
                             <th>Name</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody id="sortable">
                         @forelse ($data['records'] as $record)
-                            <tr data-id ="{{ $record->id }}" class="category_sort">
-                                <td><i class="fas fa-sort"></i></td>
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ ucfirst($record->name) }}</td>
                                 <td>
                                     <div class="d-flex">
@@ -87,30 +87,6 @@
 @endsection
 @section('js')
     <script>
-        $(function(){
-            $('#sortable').sortable({
-                axis:'y',
-                helper:'clone',
-                stop:function(event,ui){
-                    var ids = '';
-                    $('.category_sort').each(function(){
-                        if(ids !== "")
-                            ids = ids+','+$(this).attr('data-id')
-                        else
-                            ids = ids + $(this).attr('data-id')
-                    }).promise().done(function(){
-                        $.ajax({
-                            url:"{{ route($base_route.'sort') }}",
-                            data:{"ids":ids},
-                            success:function(res){},
-                            error:function(err){
-                                console.log(err);
-                            }
-                        });
-                    })
-                }
-            });
-        });
         @include('backend.includes.sweet_alert')
     </script>
 @endsection
